@@ -36,6 +36,9 @@ class MenuConnectionResolver extends TermObjectConnectionResolver {
 		if ( ! empty( $this->args['where']['location'] ) ) {
 			if ( isset( $theme_locations[ $this->args['where']['location'] ] ) ) {
 				$term_args['include'] = $theme_locations[ $this->args['where']['location'] ];
+			} else {
+				// No menus are assigned to that location.
+				$term_args['include'] = -1;
 			}
 		} else {
 			// If the current user cannot edit theme options

@@ -61,7 +61,7 @@ class MenuItemConnectionResolver extends PostObjectConnectionResolver {
 		$locations = is_array( $menu_locations ) && ! empty( $menu_locations ) ? array_unique( array_values( $menu_locations ) ) : [];
 
 		// If the location argument is set, set the argument to the input argument
-		if ( isset( $this->args['where']['location'] ) && isset( $menu_locations[ $this->args['where']['location'] ] ) ) {
+		if ( isset( $this->args['where']['location'] ) ) {
 
 			$locations = [ $menu_locations[ $this->args['where']['location'] ] ];
 
